@@ -17,7 +17,6 @@
 | **指标聚合** | - 每天 00:05 自动检测“完整周”并聚合<br>- `metrics.compute_metrics.aggregate_unprocessed_weeks()` |
 | **智能反馈** | - DeepSeek Chat API<br>- Prompt 包含个人档案 + 周统计 + WHO 指南<br>- 生成「周度总结 + 3 条行动计划（周期周数 + 动力寄语）」 |
 | **可视化** | - KPI 五连卡（睡眠 / 步数 / 情绪 / 运动 / BMI）<br>- 当周 4×日折线 + 最近 4 周双折线<br>- 建议卡片：目标值 + 目标周期 + 动力 emoji |
-| **推送** | - 一键按钮 / 定时任务<br>- SMTP 邮件 & 企微 / 飞书机器人 Webhook |
 | **技术栈** | Python 3.11, Streamlit 1.35, Pandas, APScheduler, Pydantic v2, python-dotenv |
 
 ---
@@ -76,16 +75,6 @@ streamlit run src/ui/app.py
 
 ---
 
-## 界面预览
-
-| 每日打卡                          | 周度仪表盘                        | 健康建议卡片                               |
-| ----------------------------- | ---------------------------- | ------------------------------------ |
-| ![](docs/screenshot_form.png) | ![](docs/screenshot_kpi.png) | ![](docs/screenshot_suggestions.png) |
-
-> *将三张截图放入 `docs/` 目录或自行删除本表格*
-
----
-
 ## 开发提示
 
 * **绝对导入 + `sys.path` 注入**：`src/ui/app.py` 冒头 3 行已将 `src/` 加入 `sys.path`，保证 Streamlit 可直接 `streamlit run`.
@@ -112,16 +101,3 @@ streamlit run src/ui/app.py
 ## License
 
 MIT © 2025 Ray
-
----
-
-**使用说明**
-
-1. 把以上内容保存为项目根的 `README.md`。  
-2. 根据需要替换截图路径或删除截图表格。  
-3. `git add README.md docs/` → `git commit -m "docs: 添加中文 README"` → `git push`。
-
-这样 GitHub 页面即显示完整的中文说明文档。祝发布顺利！
-
-::contentReference[oaicite:0]{index=0}
-```
